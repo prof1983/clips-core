@@ -1,3 +1,8 @@
+/*
+LastMod: 06.06.2012 by Prof1983 prof1983@ya.ru
+Version: 6.30
+*/
+
    /*******************************************************/
    /*      "C" Language Integrated Production System      */
    /*                                                     */
@@ -43,7 +48,8 @@
 #define LOCALE extern
 #endif
 
-   LOCALE intBool                        VariableAnalysis(void *,struct lhsParseNode *);
+LOCALE intBool
+VariableAnalysis(void *, struct lhsParseNode *);
 
 #endif
 

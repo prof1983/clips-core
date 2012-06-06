@@ -1,3 +1,8 @@
+/*
+LastMod: 06.06.2012 by Prof1983 prof1983@ya.ru
+Version: 6.30
+*/
+
    /*******************************************************/
    /*      "C" Language Integrated Production System      */
    /*                                                     */
@@ -34,7 +39,6 @@
 /*************************************************************/
 
 #ifndef _H_agenda
-
 #define _H_agenda
 
 #ifndef _H_ruledef
@@ -53,7 +57,7 @@
 
 #define MAX_DEFRULE_SALIENCE  10000
 #define MIN_DEFRULE_SALIENCE -10000
-  
+
 /*******************/
 /* DATA STRUCTURES */
 /*******************/
@@ -83,7 +87,7 @@ typedef struct activation ACTIVATION;
 #define AGENDA_DATA 17
 
 struct agendaData
-  { 
+  {
 #if DEBUGGING_FUNCTIONS
    unsigned WatchActivations;
 #endif
@@ -128,40 +132,87 @@ struct agendaData
 #define SetAgendaChanged(a) EnvSetAgendaChanged(GetCurrentEnvironment(),a)
 #define SetSalienceEvaluation(a) EnvSetSalienceEvaluation(GetCurrentEnvironment(),a)
 
-   LOCALE void                    AddActivation(void *,void *,void *);
-   LOCALE void                    ClearRuleFromAgenda(void *,void *);
-   LOCALE void                   *EnvGetNextActivation(void *,void *);
-   LOCALE char                   *EnvGetActivationName(void *,void *);
-   LOCALE int                     EnvSetActivationSalience(void *,void *,int);
-   LOCALE void                    EnvGetActivationPPForm(void *,char *,unsigned,void *);
-   LOCALE void                    EnvGetActivationBasisPPForm(void *,char *,unsigned,void *);
-   LOCALE intBool                 MoveActivationToTop(void *,void *);
-   LOCALE intBool                 EnvDeleteActivation(void *,void *);
-   LOCALE intBool                 DetachActivation(void *,void *);
-   LOCALE void                    EnvAgenda(void *,char *,void *);
-   LOCALE void                    RemoveActivation(void *,void *,int,int);
-   LOCALE void                    RemoveAllActivations(void *);
-   LOCALE int                     EnvGetAgendaChanged(void *);
-   LOCALE void                    EnvSetAgendaChanged(void *,int);
-   LOCALE unsigned long           GetNumberOfActivations(void *);
-   LOCALE intBool                 EnvGetSalienceEvaluation(void *);
-   LOCALE intBool                 EnvSetSalienceEvaluation(void *,intBool);
-   LOCALE void                    EnvRefreshAgenda(void *,void *);
-   LOCALE void                    EnvReorderAgenda(void *,void *);
-   LOCALE void                    InitializeAgenda(void *);
-   LOCALE void                   *SetSalienceEvaluationCommand(void *);
-   LOCALE void                   *GetSalienceEvaluationCommand(void *);
-   LOCALE void                    RefreshAgendaCommand(void *);
-   LOCALE void                    RefreshCommand(void *);
-   LOCALE intBool                 EnvRefresh(void *,void *);
+LOCALE void
+AddActivation(void *, void *, void *);
+
+LOCALE void
+ClearRuleFromAgenda(void *, void *);
+
+LOCALE void*
+EnvGetNextActivation(void *, void *);
+
+LOCALE char*
+EnvGetActivationName(void *, void *);
+
+LOCALE int
+EnvSetActivationSalience(void *, void *, int);
+
+LOCALE void
+EnvGetActivationPPForm(void *, char *, unsigned, void *);
+
+LOCALE void
+EnvGetActivationBasisPPForm(void *, char *, unsigned, void *);
+
+LOCALE intBool
+MoveActivationToTop(void *, void *);
+
+LOCALE intBool
+EnvDeleteActivation(void *, void *);
+
+LOCALE intBool
+DetachActivation(void *,void *);
+
+LOCALE void
+EnvAgenda(void *, char *, void *);
+
+LOCALE void
+RemoveActivation(void *, void *, int, int);
+
+LOCALE void
+RemoveAllActivations(void *);
+
+LOCALE int
+EnvGetAgendaChanged(void *);
+
+LOCALE void
+EnvSetAgendaChanged(void *, int);
+
+LOCALE unsigned long
+GetNumberOfActivations(void *);
+
+LOCALE intBool
+EnvGetSalienceEvaluation(void *);
+
+LOCALE intBool
+EnvSetSalienceEvaluation(void *, intBool);
+
+LOCALE void
+EnvRefreshAgenda(void *, void *);
+
+LOCALE void
+EnvReorderAgenda(void *, void *);
+
+LOCALE void
+InitializeAgenda(void *);
+
+LOCALE void*
+SetSalienceEvaluationCommand(void *);
+
+LOCALE void*
+GetSalienceEvaluationCommand(void *);
+
+LOCALE void
+RefreshAgendaCommand(void *);
+
+LOCALE void
+RefreshCommand(void *);
+
+LOCALE intBool
+EnvRefresh(void *, void *);
+
 #if DEBUGGING_FUNCTIONS
-   LOCALE void                    AgendaCommand(void *);
+LOCALE void
+AgendaCommand(void *);
 #endif
 
 #endif
-
-
-
-
-
-
